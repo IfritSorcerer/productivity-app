@@ -1,28 +1,31 @@
-import { TaskForm } from "./components/TaskForm";
 import { Header } from "./containers/Header";
 import { TaskList } from "./components/TaskList";
-import { useState } from "react";
+import {  useState, useEffect } from "react";
 
 function App() {
   const [toDos, setTodos] = useState([
     {
       title:"Sample Task",
       description: "Don't forget to test",
-      date: "4/20/95"
     }
-  ]);
+  ]);  
 
-  const addTodos = (title, description, date) => {
+  const addTodos = (title, description) => {
     setTodos((prev) => {
       const toDos = {
         title: title,
         description:description,
-        date: date
       };
+      
       return [...prev, toDos]
     });
+  localStorage.setItem("toDos", JSON.stringify(toDos));
   };
-  console.log(toDos);
+
+useEffect(() => {
+  JSON.parse(localStorage.getItem("toDos"));
+}, [toDos])
+
   return (
     <div>
       <Header />
