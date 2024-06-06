@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { TaskForm } from "./components/TaskForm";
+import { Header } from "./containers/Header";
+import { TaskList } from "./components/TaskList";
+import { useState } from "react";
 
 function App() {
+  const [toDos, setTodos] = useState([
+    {
+      title:"Sample Task",
+      description: "Don't forget to test",
+      date: "4/20/95"
+    }
+  ]);
+
+  const addTodos = (title, description, date) => {
+    setTodos((prev) => {
+      const toDos = {
+        title: title,
+        description:description,
+        date: date
+      };
+      return [...prev, toDos]
+    });
+  };
+  console.log(toDos);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+        <TaskList 
+          toDos = {toDos}
+          addTodos = {addTodos}
+        />
     </div>
   );
 }
