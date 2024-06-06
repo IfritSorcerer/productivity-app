@@ -23,8 +23,8 @@ function App() {
   };
 
 useEffect(() => {
-  JSON.parse(localStorage.getItem("toDos"));
-}, [toDos])
+  setTodos(JSON.parse(localStorage.getItem("toDos")));
+}, [])
 
   return (
     <div>
