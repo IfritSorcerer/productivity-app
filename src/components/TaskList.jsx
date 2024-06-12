@@ -16,6 +16,8 @@ export const TaskList = ({ toDos, addTodos }) => {
     
   };
 
+
+
   return (
     <div className="buttonSort">
       <TaskForm 
@@ -37,11 +39,12 @@ export const TaskList = ({ toDos, addTodos }) => {
       </button>
       <div className="todoContainer" >
         <h2>My Tasks:</h2>
-        {toDos?.map((toDo) => {
+        {toDos?.map((toDo, index) => {
           return (
-            <div>
+            <div key={index}>
             <h3>{toDo.title}</h3>
             <p>{toDo.description}</p>
+            
             </div>
           )
         })}
