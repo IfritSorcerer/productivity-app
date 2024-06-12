@@ -21,7 +21,7 @@ export const TaskList = ({ toDos, addTodos }) => {
       <TaskForm 
         title={title} setNewTitle={setTitle}
         description={description} setNewDescription={setDescription}
-        handleSubmit={handleSubmit}
+        handleSubmit={handleSubmit} 
       />
       <button
         className={`isComplete ${isComplete === false && "active"}`}
@@ -37,7 +37,7 @@ export const TaskList = ({ toDos, addTodos }) => {
       </button>
       <div className="todoContainer" >
         <h2>My Tasks:</h2>
-        {toDos.map((toDo) => {
+        {toDos?.map((toDo) => {
           return (
             <div>
             <h3>{toDo.title}</h3>
