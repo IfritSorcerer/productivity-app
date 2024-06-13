@@ -27,10 +27,22 @@ function App() {
     });
   };
 
+  const removeTodos = (index) => {
+    setTodos((prev) => {
+      const updatedTodos = [...prev];
+      updatedTodos.splice(index, 1)
+      localStorage.setItem("toDos", JSON.stringify(updatedTodos));
+      return updatedTodos;
+    })
+  }
+
   return (
     <div>
       <Header />
-      <TaskList toDos={toDos} addTodos={addTodos} />
+      <TaskList 
+        toDos={toDos} 
+        addTodos={addTodos} 
+        removeTodos={removeTodos}/>
     </div>
   );
 }
