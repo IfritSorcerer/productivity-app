@@ -15,13 +15,15 @@ export const TaskForm = ({
           type="text"
           htmlFor="taskName"
           placeholder="Buy Eggs"
+          id="taskName"
           value={title}
           onChange={(e) => setNewTitle(e.target.value)}
           required
         />
-      <label htmlFor="taskDescrip">Description:</label>
+      <label htmlFor="taskDescription">Description:</label>
         <input
-          htmlFor="taskDescrip"
+          htmlFor="taskDescripion"
+          id="taskDescription"
           placeholder="Please don't forget to buy eggs later from the store"
           value={description}
           onChange={(e) => setNewDescription(e.target.value)}

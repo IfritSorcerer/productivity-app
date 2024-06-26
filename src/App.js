@@ -17,15 +17,6 @@ function App() {
     localStorage.setItem("toDos", JSON.stringify(toDos));
   }, [toDos]);
   
-  const addTodos = (title, description) => {
-    setTodos((prev) => {
-      const newTodo = {
-        title: title,
-        description: description,
-      };
-      return [...prev, newTodo];
-    });
-  };
 
   const removeTodos = (index) => {
     setTodos((prev) => {
@@ -41,7 +32,7 @@ function App() {
       <Header />
       <TaskList 
         toDos={toDos} 
-        addTodos={addTodos} 
+        setTodos={setTodos} 
         removeTodos={removeTodos}/>
     </div>
   );
