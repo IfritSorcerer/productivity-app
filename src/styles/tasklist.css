@@ -1,0 +1,92 @@
+.buttonSort {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin-top: 2%;
+   
+}
+
+.secondaryBtn {
+    font-size: 20px;
+    padding: 10px;
+    margin-top: 25px;
+    background-color: #4b5079;
+    color: #feecd3;
+    border: none;
+    width: 400px;
+    cursor: pointer;
+    border-top-left-radius: 120px;
+    border-top-right-radius: 120px;
+}
+
+.active {
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;  
+    background-color: #646b9f;
+    color: #feecd3;
+    border: none;
+    width: 400px;
+    cursor: pointer;
+}
+
+.todoContainer {
+    background-color: #646b9f;
+    width: 50%;
+    margin-left: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.taskContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+    gap: 100px;
+    color: #fadadd;
+}
+
+.taskContainer h3{
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.taskContainer p {
+    font-size: 14px;
+    margin-top: 8px;
+}
+.taskContainer button {
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    border: none;
+    background-color: #646b9f;
+    color: #fadadd;
+}
+
+.task{
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonRack {
+    display: flex;
+    flex-direction: row;
+}
+
+.chkBtn :hover{
+    color: #6a9e65;
+    transition: .2s;
+}
+
+.delBtn :hover{
+    color: #d40000;
+    transition: .2s;
+}
