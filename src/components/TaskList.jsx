@@ -2,6 +2,7 @@ import { React, useEffect, useState } from "react";
 import { TaskForm } from "./TaskForm";
 import { FaCheck } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
+import "../styles/tasklist.css";
 
 export const TaskList = ({ toDos, setTodos, removeTodos }) => {
   //This state handles checking the current screen and should switch the tabs on the site
@@ -46,17 +47,20 @@ export const TaskList = ({ toDos, setTodos, removeTodos }) => {
   const handleRemoveCompleted = (index) => {
     setCompletedTodo(() => {
       const updatedCompletedTodo = [...completedTodo];
-      updatedCompletedTodo.splice(index, 1)
-      localStorage.setItem("completedTodo", JSON.stringify(updatedCompletedTodo));
+      updatedCompletedTodo.splice(index, 1);
+      localStorage.setItem(
+        "completedTodo",
+        JSON.stringify(updatedCompletedTodo)
+      );
       return updatedCompletedTodo;
-    })
-  }
+    });
+  };
 
   useEffect(() => {
     localStorage.setItem("completedTodo", JSON.stringify(completedTodo));
   }, [completedTodo]);
   return (
-    <div className="buttonSort">
+    <>
       <TaskForm
         title={title}
         setNewTitle={setTitle}
@@ -64,46 +68,62 @@ export const TaskList = ({ toDos, setTodos, removeTodos }) => {
         setNewDescription={setDescription}
         handleSubmit={handleSubmit}
       />
-      <button
-        className={`isComplete ${isComplete === false && "active"}`}
-        onClick={() => setIsComplete(false)}
-      >
-        In-Progress
-      </button>
-      <button
-        className={`isComplete ${isComplete === true && "active"}`}
-        onClick={() => setIsComplete(true)}
-      >
-        Completed
-      </button>
-      <h2>My Tasks:</h2>
+      <div className="buttonSort">
+        <button
+          className={`secondaryBtn ${isComplete === false && "active"}`}
+          onClick={() => setIsComplete(false)}
+        >
+          In-Progress
+        </button>
+        <button
+          className={`secondaryBtn ${isComplete === true && "active"}`}
+          onClick={() => setIsComplete(true)}
+        >
+          Completed
+        </button>
+      </div>
       <div className="todoContainer">
+        
         {isComplete === false &&
           toDos.map((toDo, index) => (
-            <div key={index}>
-              <h3>{toDo.title}</h3>
-              <p>{toDo.description}</p>
-              <button onClick={() => removeTodos(index)}>
-                <MdDelete />
-              </button>
-              <button onClick={() => handleAddCompleted(index)}>
-                <FaCheck />
-              </button>
-            </div>
+            <div key={index} className="taskContainer">
+              <div className="task">
+                <h3>{toDo.title}</h3>
+                <p>{toDo.description}</p>
+              </div>
+              <div className="buttonRack">
+                <button 
+                  className="delBtn"
+                  onClick={() => removeTodos(index)}>
+                  <MdDelete />
+                </button>
+                <button 
+                  className="chkBtn"
+                  onClick={() => handleAddCompleted(index)}>
+                  <FaCheck />
+                </button>
+                </div>
+              </div>
           ))}
 
-        {isComplete === true &&
-          completedTodo.map((completedTask, index) => (
-            <div key={index}>
-              <h3>{completedTask.title}</h3>
-              <p>{completedTask.description}</p>
-              <p>Completed on: {completedTask.completedOn}</p>
-              <button onClick={() => handleRemoveCompleted(index)}>
-                <MdDelete />
-              </button>
-            </div>
-          ))}
+        <div className="completedTasks">
+          {isComplete === true &&
+            completedTodo.map((completedTask, index) => (
+              <div key={index} className="taskContainer">
+                <div className="task">
+                  <h3>{completedTask.title}</h3>
+                  <p>{completedTask.description}</p>
+                </div>
+                <p>Completed on: {completedTask.completedOn}</p>
+                  <button 
+                    className="delBtn"
+                    onClick={() => handleRemoveCompleted(index)}>
+                    <MdDelete />
+                  </button>
+                </div>
+            ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };

@@ -1,0 +1,12 @@
+body {
+  margin: 0; 
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(0deg, rgba(194,130,133,1) 0%, rgba(93,91,129,1) 64%);
+  background-color: rgba(194,130,133,1);
+  background-repeat: no-repeat;
+  background-size:contain;
+}
+
+
