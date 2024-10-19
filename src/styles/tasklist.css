@@ -3,7 +3,6 @@
     justify-content:center;
     align-items: center;
     margin-top: 2%;
-   
 }
 
 .secondaryBtn {
@@ -11,12 +10,15 @@
     padding: 10px;
     margin-top: 25px;
     background-color: #4b5079;
-    color: #feecd3;
+    color: #252634;
     border: none;
     width: 400px;
     cursor: pointer;
-    border-top-left-radius: 120px;
-    border-top-right-radius: 120px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    border-top: 3px solid #fadadd;
+    border-right: 3px solid #fadadd;
+    border-left: 3px solid #fadadd;
 }
 
 .active {
@@ -24,41 +26,44 @@
     font-size: 20px;
     padding: 10px;  
     background-color: #646b9f;
-    color: #feecd3;
+    color: #fad25a;
     border: none;
     width: 400px;
     cursor: pointer;
+    border-top: 3px solid #fadadd;
+    border-left: 3px solid #fadadd;
+    border-right: 3px solid #fadadd;
 }
 
 .todoContainer {
     background-color: #646b9f;
-    width: 50%;
-    margin-left: 400px;
     display: flex;
     flex-direction: column;
+    border-left:3px solid #fadadd;
+    border-right:3px solid #fadadd;
 }
 
 .taskContainer{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 40px;
+    padding: 10px;
     gap: 100px;
     color: #fadadd;
+    border-bottom: 3px solid #fadadd;
 }
 
 .taskContainer h3{
     font-size: 25px;
     font-weight: bold;
     margin: 0;
+    color: #fad25a;
+    text-decoration: underline;
 }
 
 .taskContainer p {
-    font-size: 14px;
+    font-size: 20px;
     margin-top: 8px;
 }
 .taskContainer button {
