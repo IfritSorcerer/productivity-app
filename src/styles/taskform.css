@@ -1,50 +1,89 @@
 .taskForm {
-   background-color: #646b9f;
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size:cover;
-   padding: 2%;
-   width: 50%; 
-   margin-left: auto;
-   margin-right: auto;
-   margin-top: 1%;
-   max-height: 80vh;
-   overflow-y: auto;
-   box-shadow: 10px 10px 17px  #252634;
+    background-color: #393e46;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 2rem;
+    width: 100%;
+    max-width: 480px;
+    margin: 2rem auto 0 auto;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 16px #22283177;
+    border-radius: 18px;
 }
 
 #taskLabel {
     display: flex;
     align-items: center;
-    justify-content: left;
-    margin-top: 5px;
-    color: #fadadd;
+    justify-content: flex-start;
+    margin-top: 0.5rem;
+    color: #fbd46d;
     font-weight: bold;
     text-decoration: underline;
-    font-size: 25px;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
 }
 
 #taskInput {
     width: 100%;
-    height: 30px;
-    align-items: center;
+    height: 2.2rem;
+    padding: 0.5rem;
     border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    background: #f9f9f9;
+    color: #222831;
+    box-sizing: border-box;
+}
+
+#taskInput:focus {
+    outline: 2px solid #fbd46d;
+    background: #fbd46d;
+    color: #222831;
 }
 
 #taskButton {
     font-weight: bold;
-    font-size: 20px;
-    background-color: #fad25a;
-    color: #646b9f;
+    font-size: 1.1rem;
+    background-color: #4f8a8b;
+    color: #f9f9f9;
     border: none;
-    margin-top: 30px;
-    margin-left: 25px;
+    margin-top: 1rem;
+    margin-left: 0;
+    padding: 0.7rem 2rem;
+    border-radius: 8px;
     cursor: pointer;
-    
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 2px 8px #22283133;
+    display: block;
+    width: 100%;
+}
+
+#taskButton:hover,
+#taskButton:focus {
+    background-color: #f76b8a;
+    color: #222831;
 }
 
 h4 {
     text-align: center;
-    color: #feedfe;
-    font-size: 25px;
+    color: #f76b8a;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .taskForm {
+        padding: 1rem;
+        max-width: 98vw;
+    }
+    #taskLabel {
+        font-size: 1.1rem;
+    }
+    h4 {
+        font-size: 1.1rem;
+    }
 }
