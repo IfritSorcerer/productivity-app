@@ -8,8 +8,8 @@ function App() {
     return (
       savedTodos || [
         {
-          title: "Sample Task",
-          description: "Don't forget to test",
+          title: "Take the dog for a walk",
+          description: "please don't forget to take the dog for a walk at 5pm",
         },
       ]
     );

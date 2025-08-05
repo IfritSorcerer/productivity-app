@@ -1,20 +1,19 @@
-import { React, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { TaskForm } from "./TaskForm";
 import { FaCheck } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import "../styles/tasklist.css";
 
 export const TaskList = ({ toDos, setTodos, removeTodos }) => {
-  //This state handles checking the current screen and should switch the tabs on the site
+ 
   const [isComplete, setIsComplete] = useState(false);
 
-  //This state will handle giving the tasks the "completed" flag and save the array to local storage
+  
   const [completedTodo, setCompletedTodo] = useState(() => {
     const savedCompleted = localStorage.getItem("completedTodo");
     return savedCompleted ? JSON.parse(savedCompleted) : [];
   });
 
-  //These states will handle the task info itself
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 

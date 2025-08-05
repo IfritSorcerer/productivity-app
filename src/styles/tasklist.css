@@ -1,92 +1,138 @@
 .buttonSort {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
-    margin-top: 2%;
-   
+    margin-top: 2rem;
 }
 
 .secondaryBtn {
-    font-size: 20px;
-    padding: 10px;
-    margin-top: 25px;
-    background-color: #4b5079;
-    color: #feecd3;
+    font-size: 1.1rem;
+    padding: 12px 0;
+    margin-top: 1.5rem;
+    background-color: #4F8A8B;
+    color: #F9F9F9;
     border: none;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     cursor: pointer;
-    border-top-left-radius: 120px;
-    border-top-right-radius: 120px;
+    border-radius: 18px 18px 0 0;
+    border-top: 3px solid #FBD46D;
+    border-right: 3px solid #FBD46D;
+    border-left: 3px solid #FBD46D;
+    transition: background 0.2s, color 0.2s;
+}
+
+.secondaryBtn:hover {
+    background-color: #F76B8A;
+    color: #222831;
 }
 
 .active {
     font-weight: bold;
-    font-size: 20px;
-    padding: 10px;  
-    background-color: #646b9f;
-    color: #feecd3;
+    font-size: 1.1rem;
+    padding: 12px 0;
+    background-color: #F76B8A;
+    color: #222831;
     border: none;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     cursor: pointer;
+    border-top: 3px solid #FBD46D;
+    border-left: 3px solid #FBD46D;
+    border-right: 3px solid #FBD46D;
+    border-radius: 18px 18px 0 0;
 }
 
 .todoContainer {
-    background-color: #646b9f;
-    width: 50%;
-    margin-left: 400px;
+    background-color: #393E46;
     display: flex;
     flex-direction: column;
+    border-left: 3px solid #FBD46D;
+    border-right: 3px solid #FBD46D;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 4px 16px #22283133;
 }
 
-.taskContainer{
+.taskContainer {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 40px;
-    gap: 100px;
-    color: #fadadd;
+    padding: 18px 24px;
+    gap: 2rem;
+    color: #F9F9F9;
+    border-bottom: 3px solid #FBD46D;
+    background: rgba(79, 138, 139, 0.95);
+    transition: background 0.2s;
 }
 
-.taskContainer h3{
-    font-size: 25px;
+.taskContainer:last-child {
+    border-bottom: none;
+}
+
+.taskContainer:hover {
+    background: #4F8A8B;
+}
+
+.taskContainer h3 {
+    font-size: 1.3rem;
     font-weight: bold;
     margin: 0;
+    color: #FBD46D;
+    text-decoration: underline;
 }
 
 .taskContainer p {
-    font-size: 14px;
-    margin-top: 8px;
-}
-.taskContainer button {
-    font-size: 30px;
-    display: flex;
-    flex-direction: row;
-    cursor: pointer;
-    border: none;
-    background-color: #646b9f;
-    color: #fadadd;
+    font-size: 1rem;
+    margin: 8px 0 0 0;
 }
 
-.task{
+.taskContainer button {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: #F9F9F9;
+    transition: color 0.2s;
+    margin-left: 8px;
+}
+
+.task {
     display: flex;
     flex-direction: column;
+    flex: 1;
 }
 
 .buttonRack {
     display: flex;
     flex-direction: row;
+    gap: 0.5rem;
 }
 
-.chkBtn :hover{
-    color: #6a9e65;
-    transition: .2s;
+.chkBtn:hover {
+    color: #4F8A8B;
 }
 
-.delBtn :hover{
-    color: #d40000;
-    transition: .2s;
+.delBtn:hover {
+    color: #F76B8A;
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+    .todoContainer, .secondaryBtn, .active {
+        max-width: 98vw;
+        width: 98vw;
+    }
+    .taskContainer {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 12px 8px;
+    }
+    .buttonRack {
+        justify-content: flex-end;
+    }
 }
